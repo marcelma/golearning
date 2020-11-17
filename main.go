@@ -20,9 +20,16 @@ func arrayExample() {
 
 	headerFunc("arrayExample")
 
-	a := []int{1, 2, 3, 4}
+	a := [4]int{1, 2, 3, 4}
 
 	fmt.Printf("%v\t %T\n", a, a)
+
+	x := [5]int{1, 2, 3, 4, 5}
+	for i, v := range x {
+		fmt.Println(i, v)
+	}
+	fmt.Printf("%T\n", x)
+
 }
 
 func sliceExample() {
@@ -39,6 +46,43 @@ func sliceExample() {
 
 	z := append(x[0:2], x[4:]...)
 	fmt.Println(z)
+
+	ex := []int{2, 3, 4, 5, 6, 7, 8, 9, 0, 1}
+
+	fmt.Println(ex[:5])
+	fmt.Println(ex[5:])
+	fmt.Println(ex[2:7])
+	fmt.Println(ex[1:6])
+
+	m := []int{2, 3, 4, 5, 6, 7, 8, 9, 0, 1}
+	m = append(m[:3], m[6:]...)
+	fmt.Println(m)
+
+	soa := make([]string, 50, 50)
+	fmt.Println(soa)
+	fmt.Println(len(soa))
+	fmt.Println(cap(soa))
+
+	soa = append(soa, ` Alabama`, ` Alaska`, ` Arizona`, ` Arkansas`, ` California`, ` Colorado`, ` Connecticut`, ` Delaware`, ` Florida`, ` Georgia`, ` Hawaii`, ` Idaho`, ` Illinois`, ` Indiana`, ` Iowa`, ` Kansas`, ` Kentucky`, ` Louisiana`, ` Maine`, ` Maryland`, ` Massachusetts`, ` Michigan`, ` Minnesota`, ` Mississippi`, ` Missouri`, ` Montana`, ` Nebraska`, ` Nevada`, ` New Hampshire`, ` New Jersey`, ` New Mexico`, ` New York`, ` North Carolina`, ` North Dakota`, ` Ohio`, ` Oklahoma`, ` Oregon`, ` Pennsylvania`, ` Rhode Island`, ` South Carolina`, ` South Dakota`, ` Tennessee`, ` Texas`, ` Utah`, ` Vermont`, ` Virginia`, ` Washington`, ` West Virginia`, ` Wisconsin`, ` Wyoming`)
+	for i := 0; i < len(soa); i++ {
+		fmt.Println(i, soa[i])
+	}
+
+	h71 := []string{"James", "Bond", "Shaken, not stirred"}
+	h72 := []string{"Miss", "Moneypenny", "Helloooooo, James."}
+	fmt.Println(h71)
+	fmt.Println(h72)
+
+	h7 := [][]string{h71, h72}
+	for i, xs := range h7 {
+		fmt.Println("record: ", i)
+		for j, val := range xs {
+			fmt.Printf("\t index position: %v \t value: \t %v\n", j, val)
+
+		}
+	}
+	fmt.Println(h7)
+
 }
 
 func mapExample() {
@@ -49,6 +93,24 @@ func mapExample() {
 	m := map[string]int{
 		"Marcell": 1,
 		"Martini": 2,
+	}
+
+	h8 := map[string][]string{
+		`bond_james`:      []string{`Shaken, not stirred`, `Martinis`, `Women`},
+		`moneypenny_miss`: []string{`James Bond`, `Literature`, `Computer Science`},
+		`no_dr`:           []string{`Being evil`, `Ice cream`, `Sunsets`},
+	}
+	// fmt.Println(h8)
+
+	h8[`Marcell`] = []string{`Skydive`, `Swoop`, `4way`}
+
+	delete(h8, `no_dr`)
+
+	for k, names := range h8 {
+		fmt.Println(k)
+		for _, name := range names {
+			fmt.Printf("\t%v\n", name)
+		}
 	}
 
 	// comma ok idiom
