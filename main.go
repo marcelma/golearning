@@ -8,17 +8,138 @@ func main() {
 	arrayExample()
 	sliceExample()
 	mapExample()
+	structExample()
 }
 
-func headerFunc(h string) {
+func headerOutPut(h string) {
 	fmt.Printf("\n######################\n")
 	fmt.Printf("# %v\n", h)
 	fmt.Printf("######################\n")
 }
 
+func structExample() {
+	headerOutPut("structExample")
+
+	type pessoa struct {
+		nome             string
+		sobrenome        string
+		saboresFavoritos []string
+	}
+
+	eu := pessoa{
+		nome:             "marcell",
+		sobrenome:        "martini",
+		saboresFavoritos: []string{"chocolate", "flocos"},
+	}
+
+	ela := pessoa{
+		nome:      "vida",
+		sobrenome: "viva",
+		saboresFavoritos: []string{
+			"flocos",
+			"morango",
+		},
+	}
+
+	fmt.Println(eu.nome, eu.sobrenome)
+	for _, v := range eu.saboresFavoritos {
+		fmt.Printf("\t%s\n", v)
+	}
+
+	fmt.Println(ela.nome, ela.sobrenome)
+	for _, v := range ela.saboresFavoritos {
+		fmt.Printf("\t%s\n", v)
+	}
+
+	fmt.Println()
+	fmt.Println()
+
+	m := map[string]pessoa{
+		eu.sobrenome:  eu,
+		ela.sobrenome: ela,
+	}
+
+	for _, v := range m {
+		fmt.Println(v.nome, v.sobrenome)
+		for _, sf := range v.saboresFavoritos {
+			fmt.Printf("\t%s\n", sf)
+		}
+	}
+
+	type vehicle struct {
+		doors int
+		color string
+	}
+
+	type truck struct {
+		vehicle
+		fourWheel bool
+	}
+
+	type sedan struct {
+		vehicle
+		luxury bool
+	}
+
+	fmt.Println()
+
+	t := truck{
+		vehicle: vehicle{
+			doors: 4,
+			color: "red",
+		},
+		fourWheel: true,
+	}
+
+	s := sedan{
+		vehicle: vehicle{
+			doors: 2,
+			color: "black",
+		},
+		luxury: false,
+	}
+
+	fmt.Println(t)
+	fmt.Println(s)
+	fmt.Println(t.color)
+	fmt.Println(s.color)
+
+	as := struct {
+		nome      string
+		amigos    map[string]int
+		bebidaFav []string
+	}{
+		nome: "marcell",
+		amigos: map[string]int{
+			"A": 543,
+			"B": 123,
+			"C": 654,
+		},
+		bebidaFav: []string{
+			"whisky",
+			"Cerveja",
+		},
+	}
+	fmt.Println()
+	fmt.Println(as)
+	fmt.Println(as.nome)
+	fmt.Println(as.amigos)
+	fmt.Println(as.bebidaFav)
+
+	// ranger sobre MAP
+	for key, val := range as.amigos {
+		fmt.Println(key, val)
+	}
+
+	// RANGER sobre SLICE
+	for index, val := range as.bebidaFav {
+		fmt.Println(index, val)
+	}
+}
+
 func arrayExample() {
 
-	headerFunc("arrayExample")
+	headerOutPut("arrayExample")
 
 	a := [4]int{1, 2, 3, 4}
 
@@ -33,7 +154,7 @@ func arrayExample() {
 }
 
 func sliceExample() {
-	headerFunc("sliceExample")
+	headerOutPut("sliceExample")
 
 	x := []int{4, 5, 7, 8, 42}
 	fmt.Println(x)
@@ -69,7 +190,7 @@ func sliceExample() {
 	}
 
 	h71 := []string{"James", "Bond", "Shaken, not stirred"}
-	h72 := []string{"Miss", "Moneypenny", "Helloooooo, James."}
+	h72 := []string{"Miss", "Moneypenny", "Hello, James."}
 	fmt.Println(h71)
 	fmt.Println(h72)
 
@@ -86,7 +207,7 @@ func sliceExample() {
 }
 
 func mapExample() {
-	headerFunc("mapExample")
+	headerOutPut("mapExample")
 
 	name := "Silva"
 
