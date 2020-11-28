@@ -6,4 +6,5 @@ func main() {
 	mapExample()
 	structExample()
 	funcExamples()
+	pointerExamples()
 }
