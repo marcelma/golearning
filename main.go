@@ -5,4 +5,5 @@ func main() {
 	sliceExample()
 	mapExample()
 	structExample()
+	funcExamples()
 }
