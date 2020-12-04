@@ -8,4 +8,5 @@ func main() {
 	funcExamples()
 	pointerExamples()
 	stdoutExamples()
+	jsonExample()
 }
