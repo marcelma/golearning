@@ -1,9 +1,14 @@
-package main
+package structe
 
-import "fmt"
+import (
+	"fmt"
 
-func structExample() {
-	headerOutPut("structExample")
+	"github.com/marcelma/golearning/tools"
+)
+
+// Examples of struct
+func Examples() {
+	tools.HeaderOutPut("structExample")
 
 	type pessoa struct {
 		nome             string

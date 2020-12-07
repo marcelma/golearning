@@ -1,9 +1,14 @@
-package main
+package maps
 
-import "fmt"
+import (
+	"fmt"
 
-func mapExample() {
-	headerOutPut("mapExample")
+	"github.com/marcelma/golearning/tools"
+)
+
+// Examples of map
+func Examples() {
+	tools.HeaderOutPut("mapExample")
 
 	name := "Silva"
 

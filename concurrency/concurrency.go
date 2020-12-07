@@ -1,9 +1,11 @@
-package main
+package concurrency
 
 import (
 	"fmt"
 	"runtime"
 	"sync"
+
+	"github.com/marcelma/golearning/tools"
 )
 
 var wg sync.WaitGroup
@@ -36,8 +38,9 @@ func exemplo1() {
 	wg.Wait()
 }
 
-func concurrencyExample() {
-	headerOutPut("concurrencyExample")
+// Examples of concurrency
+func Examples() {
+	tools.HeaderOutPut("concurrencyExample")
 
 	exemplo1()
 }

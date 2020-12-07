@@ -1,11 +1,20 @@
-package main
+package pointer
 
 import (
 	"fmt"
+
+	"github.com/marcelma/golearning/tools"
 )
 
-func pointerExamples() {
-	headerOutPut("pointerExamples")
+type person struct {
+	nome      string
+	sobrenome string
+	idade     int
+}
+
+// Examples of pointer
+func Examples() {
+	tools.HeaderOutPut("pointerExamples")
 
 	a := 1
 	// Endereço de a

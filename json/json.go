@@ -1,10 +1,12 @@
-package main
+package json
 
 import (
 	"encoding/json"
 	"fmt"
 	"os"
 	"sort"
+
+	"github.com/marcelma/golearning/tools"
 )
 
 type user struct {
@@ -207,8 +209,9 @@ func example5() {
 	fmt.Println("-----")
 }
 
-func jsonExample() {
-	headerOutPut("jsonExample")
+// Examples of json
+func Examples() {
+	tools.HeaderOutPut("jsonExample")
 
 	example1()
 	example2()

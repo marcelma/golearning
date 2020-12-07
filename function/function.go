@@ -1,8 +1,10 @@
-package main
+package function
 
 import (
 	"fmt"
 	"math"
+
+	"github.com/marcelma/golearning/tools"
 )
 
 type person struct {
@@ -40,7 +42,8 @@ func info(s shape) {
 	fmt.Println(a)
 }
 
-func funcExamples() {
+// Examples of func
+func Examples() {
 	fmt.Println(foo())
 	fmt.Println(bar())
 
@@ -143,7 +146,7 @@ func maisUM() func(c int) {
 }
 
 func bar2(i []int) int {
-	headerOutPut("bar2 func")
+	tools.HeaderOutPut("bar2 func")
 	sum := 0
 	for _, v := range i {
 		sum += v
@@ -153,7 +156,7 @@ func bar2(i []int) int {
 }
 
 func foo2(i ...int) int {
-	headerOutPut("foo2 func")
+	tools.HeaderOutPut("foo2 func")
 	sum := 0
 	for _, v := range i {
 		sum += v
@@ -163,11 +166,11 @@ func foo2(i ...int) int {
 }
 
 func foo() int {
-	headerOutPut("foo func")
+	tools.HeaderOutPut("foo func")
 	return 2 + 2
 }
 
 func bar() (int, string) {
-	headerOutPut("bar func")
+	tools.HeaderOutPut("bar func")
 	return 2 + 2, "Marcell Martini"
 }

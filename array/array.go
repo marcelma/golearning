@@ -1,10 +1,15 @@
-package main
+package array
 
-import "fmt"
+import (
+	"fmt"
 
-func arrayExample() {
+	"github.com/marcelma/golearning/tools"
+)
 
-	headerOutPut("arrayExample")
+// Examples of array
+func Examples() {
+
+	tools.HeaderOutPut("arrayExample")
 
 	a := [4]int{1, 2, 3, 4}
 

@@ -1,9 +1,14 @@
-package main
+package slice
 
-import "fmt"
+import (
+	"fmt"
 
-func sliceExample() {
-	headerOutPut("sliceExample")
+	"github.com/marcelma/golearning/tools"
+)
+
+// Examples of slices
+func Examples() {
+	tools.HeaderOutPut("sliceExample")
 
 	x := []int{4, 5, 7, 8, 42}
 	fmt.Println(x)

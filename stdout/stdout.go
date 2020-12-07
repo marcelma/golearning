@@ -1,13 +1,16 @@
-package main
+package stdout
 
 import (
 	"fmt"
 	"io"
 	"os"
+
+	"github.com/marcelma/golearning/tools"
 )
 
-func stdoutExamples() {
-	headerOutPut("pointerExamples")
+// Examples of stdout
+func Examples() {
+	tools.HeaderOutPut("pointerExamples")
 
 	fmt.Println("Hello, playground")
 	fmt.Fprintln(os.Stdout, "Hello, playground")
