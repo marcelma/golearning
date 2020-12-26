@@ -4,6 +4,7 @@ import (
 	"github.com/marcelma/golearning/array"
 	"github.com/marcelma/golearning/concurrency"
 	"github.com/marcelma/golearning/concurrency/channel"
+	"github.com/marcelma/golearning/errorhandling"
 	"github.com/marcelma/golearning/function"
 	"github.com/marcelma/golearning/json"
 	"github.com/marcelma/golearning/maps"
@@ -17,6 +18,7 @@ func main() {
 	array.Examples()
 	channel.Examples()
 	concurrency.Examples()
+	errorhandling.Examples()
 	function.Examples()
 	json.Examples()
 	maps.Examples()
