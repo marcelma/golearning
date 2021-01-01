@@ -12,6 +12,7 @@ import (
 	"github.com/marcelma/golearning/slice"
 	"github.com/marcelma/golearning/stdout"
 	"github.com/marcelma/golearning/structe"
+	"github.com/marcelma/golearning/testing"
 )
 
 func main() {
@@ -23,6 +24,7 @@ func main() {
 	json.Examples()
 	maps.Examples()
 	pointer.Examples()
+	testing.Examples()
 	slice.Examples()
 	stdout.Examples()
 	structe.Examples()
